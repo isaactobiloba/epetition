@@ -31,7 +31,7 @@ class PetitionController extends Controller
     {
         $petition = Petition::create($request->only(['title', 'description', 'category', 'author, signees']));
 
-        return response()->json(new PetitionResource($petition), Response::HTTP_OK);
+        return response()->json(new PetitionResource($petition), Response::HTTP_CREATED);
     }
 
     /**
